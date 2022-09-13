@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Week1 JS Assignments</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <script src="https://use.fontawesome.com/3c538cc85f.js"></script>
+
+</head>
+<body>
+    <!-- class1 assignment-->
+    <section class="row gap-1 justify-content-center ">
+        <h1 class="text-center">  Class1 Assignments</h1>
+        <div class="text-center text-bg-primary py-3 col-5">
+            <p class="fs-4 ">Enter Your Score</p>
+            <input id="inp1" type="text" placeholder="Input Score" required class=" p-2">
+            <button class="btn btn-danger rounded-0" onclick="checker()">Enter</button>
+        </div>
+    
+        <div class="text-center text-bg-success py-3 col-5">
+            <p class="fs-4 ">Check if number is odd/even</p>
+            <input id="inp2" type="text" placeholder="Enter Number" required class=" p-2">
+            <button class="btn btn-warning rounded-0" onclick="checkodd()">Check</button>
+        </div>
+    
+        <div class="text-center text-bg-primary py-3 col-5">
+            <p class="fs-4 ">Check if number is prime</p>
+            <input id="inp3" type="text" placeholder="Enter Number" required class=" p-2">
+            <button class="btn btn-danger rounded-0" onclick="checkprime()">Check</button>
+        </div>
+    
+        <div class="text-center text-bg-success py-3 col-5">
+            <p class="fs-4 ">Check divisibility</p>
+            <input id="inp4" type="text" placeholder="Enter Number" required class=" p-2">
+            <button class="btn btn-warning rounded-0" onclick="checkdiv()">Check</button>
+        </div>
+    
+        <div class="text-center text-bg-primary py-3 col-5">
+            <input id="inp5" type="text" placeholder="Enter Name" value="Peace" class=" p-2">
+        </div>
+    
+        <div class="text-center text-bg-success py-3 col-5">
+            <input id="inp6" type="text" placeholder="Enter Name"  class=" p-2">
+            <button class="btn btn-warning rounded-0" onclick="checkName()">Click here</button>
+        </div>
+    </section>
+
+    <script>
+        function checker() {
+            var score = Number(inp1.value);
+            var cutoff = 200;
+            if ( score <=0) {
+                alert("enter score!");
+            }else if (score < cutoff) {
+                alert("FAILED");
+            }else if (score >= cutoff) {
+                alert("congratulations! you passsed");
+            }else{
+                alert("INVALID!")
+            }
+        }
+
+        function checkodd() {
+            var mynum = Number(inp2.value);
+            var rem = mynum % 2;
+            if (rem == 0) {
+                alert(  mynum + " is an even number")
+            }else{
+                alert(  mynum + " is an odd number")
+            }
+        }
+
+       function checkprime (params) {
+        var mynum = Number(inp3.value);
+        var x = 2
+        var y = mynum-1
+        var remA = mynum%x
+        var remB = mynum%y
+        if (remA ==0 && remA ==0) {
+            alert(  mynum + " is not prime number")
+        }else{
+            alert(  mynum + " is  a prime number")
+        }
+       }      
+
+        function checkdiv() {
+            var mynum = Number(inp4.value);
+            let x = 2; y =3; z =5 ;
+            var rema = mynum % x;
+            var remb = mynum % y;
+            var remc = mynum % z;
+            if (rema == 0 && remb == 0 && remc == 0) {
+                alert( mynum + " is divisible by 2, 3 and 5")
+            }else {
+                alert(mynum + " is not divisible by 2, 3 and 5")
+            }
+        }
+
+        var myName = document.getElementById( "inp5").value;
+        alert(myName);
+
+        function checkName() {
+            var enterName = document.getElementById( "inp6").value;
+            alert(enterName);
+        }
+    </script>
+
+    <!-- class2 Assignment-->
+    <section class="row gap-1 justify-content-center ">
+        <h1 class="text-center">Class2 Assignments</h1>
+        <h4 class="text-center">JAMB SCORE CHECKER</h4>
+        <div class="text-center text-bg-secondary py-3 col-5">
+            <h4 id="thirddiv">Enter Score</h4>
+            <input type="text" id="inp"  class=" p-2">
+            <button class="btn btn-danger rounded-0" onclick="grade()">Check Grade</button>
+        </div>
+    </section>
+   
+    <script>
+        function grade(){
+            var score = inp.value;
+            if (score <=20) {
+                thirddiv.innerText = "FAILED" 
+                thirddiv.style.color = "red"   
+            } else if (score <=30) {
+                thirddiv.innerText = "POOR"
+                thirddiv.style.color = "orange"     
+            } else if (score <=40) {
+                thirddiv.innerText = "FAIR" 
+                thirddiv.style.color = "yellow"       
+            } else if (score <=50) {
+                thirddiv.innerText = "GOOD"  
+                thirddiv.style.color = "blue"     
+            } else if (score <=60) {
+                thirddiv.innerText = "VERY GOOD"
+                thirddiv.style.color = "green"         
+            }   else if (score <=100) {
+                thirddiv.innerText = "EXCELLENT" 
+                thirddiv.style.color = "gold"     
+            } else {
+                thirddiv.innerText = "INVALID SCORE" 
+                thirddiv.style.color = "red"  
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>   
+</body>
+</html>
